@@ -1,0 +1,76 @@
+.setting-wrapper {
+    background: linear-gradient(#64a1e649, #1723a56b, #1784a56b);
+    justify-content: center;
+    gap: 20px;
+  }
+.field-title {
+  text-align: center;
+}
+.field {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-top: 5px;
+  width: 500px;
+  height: 500px;
+  border: 3px solid #021122f6;
+  background-color: rgba(6, 202, 216, 0.589);
+}
+.cell {
+  border: 1px solid #58595a8a;
+  width: 20%;
+  height: 20%;
+}
+.ship {
+  background-color: rgba(61, 61, 61, 0.589);
+  border: 3px solid black;
+  margin: 10px 0;
+  transition-duration: 0.3s;
+}
+.ship-one {
+  height: 50px;
+  width: 50px;
+}
+.ship-two {
+  height: 50px;
+  width: 100px;
+}
+.ship-three {
+  height: 50px;
+  width: 150px;
+}
+.ship-one::after {
+  content: "small";
+}
+.ship-two::after {
+  content: "medium";
+}
+.ship-three::after {
+  content: "large";
+}
+.choosen-ship {
+width: 0;
+height: 0;
+opacity: 0;
+}
+.shuffle-ship {
+  background-color: rgba(61, 61, 61, 0.589);
+  border: 3px solid red;
+}
+.rules {
+  width: 200px;
+  height: 250px;
+  background-color: rgb(0, 0, 0);
+  box-shadow: 0 0 10px rgba(253, 253, 253, 0.589);
+}
+.btn {
+  width: 12;
+  height: 40px;
+  border: 4px solid #4d3f127a;
+  background: rgba(231, 160, 7, 0.726);
+}
+.btn:active {
+  background: rgba(231, 160, 7, 0.911);
+  box-shadow: 0px 0px 4px rgb(255, 255, 255);
+}

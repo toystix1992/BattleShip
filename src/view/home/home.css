@@ -1,0 +1,24 @@
+.main-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 125px);
+}
+
+.home-wrapper {
+  background: linear-gradient(#e4e664, #1723a5);
+}
+
+.switch-start-page {
+  position: relative;
+  text-align: center;
+  width: 320px;
+  height: 60px;
+  border: 3px solid #2798ac;
+  border-radius: 3px;
+  background-color: rgba(31, 112, 127, 0.3);
+  font-size: 22px;
+  color: #fff;
+  cursor: pointer;
+}
