@@ -55,8 +55,18 @@ height: 0;
 opacity: 0;
 }
 .shuffle-ship {
-  background-color: rgba(61, 61, 61, 0.589);
+}
+.shuffle-ship-small {
   border: 3px solid red;
+  background-color: rgba(61, 61, 61, 0.589);
+}
+.shuffle-ship-medium {
+  border: 3px solid rgb(255, 251, 0);
+  background-color: rgba(61, 61, 61, 0.589);
+}
+.shuffle-ship-large {
+  border: 3px solid green;
+  background-color: rgba(61, 61, 61, 0.589);
 }
 .rules {
   width: 200px;
