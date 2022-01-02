@@ -4,6 +4,7 @@ import {
 } from '../controller/localStorage'
 
 export const setPositionsForGame = (arr: NodeListOf<HTMLElement>): void => {
+  const pos = getPropertyFromStorage('position1')
   const postions = {
     smal: [],
     medium: [],
@@ -20,10 +21,15 @@ export const setPositionsForGame = (arr: NodeListOf<HTMLElement>): void => {
       postions.smal.push(i)
     }
   })
-  if (!getPropertyFromStorage('postions1')) {
+  console.log(pos)
+
+  if (!pos) {
     setPropertyToStorage('position1', postions)
-  } else {
+  } else if (pos) {
     setPropertyToStorage('position2', postions)
+    if (getPropertyFromStorage('position2')) {
+      window.location.hash = 'game'
+    }
   }
 }
 

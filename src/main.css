@@ -1,5 +1,6 @@
 @import url(./view/home/home.css);
 @import url(./view/setting/setting.css);
+@import url(./view/game/game.css);
 
 html {
   scroll-behavior: smooth;

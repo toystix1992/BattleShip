@@ -8,9 +8,9 @@ import {
   toggleSetBtm,
 } from '../../controller/setPositionsForGame'
 
-const getCell = (): string => {
+export const getCell = (clas: string =''): string => {
   return `
-        <div class="cell"> </div>
+        <div class="cell ${clas}"> </div>
     `
 }
 
@@ -43,6 +43,12 @@ export const setting = {
     const navBar: HTMLElement = document.querySelector(
       '.nav-bar'
     ) as HTMLElement
+    const fieldTitle: HTMLElement = document.querySelector(
+      '.field-title'
+    ) as HTMLElement
+    const settingField: HTMLElement = document.querySelector(
+      '.setting-field'
+    ) as HTMLElement
     const setShip: HTMLElement = document.querySelector(
       '.set-ship'
     ) as HTMLElement
@@ -52,7 +58,9 @@ export const setting = {
     const cell: NodeListOf<HTMLElement> = document.querySelectorAll(
       '.cell'
     ) as NodeListOf<HTMLElement>
-    navBar.style.display = 'flex'
+    const ship: NodeListOf<HTMLElement> = document.querySelectorAll(
+      '.ship'
+    ) as NodeListOf<HTMLElement>
     const getPosition = (arr: NodeListOf<HTMLElement>, cssClass: string) => {
       const smallShipPosition: Array<number> = []
       const mediumShipPosition: Array<number> = []
@@ -352,17 +360,26 @@ export const setting = {
         }
       })
     )
-    const onSetShipBtn = () => {
+    const onSettingField = () => {
+      toggleSetBtm(setShip)
+    }
+    const onSetShipBtn = async () => {
       removePropertyFromStorage('turn')
       removePropertyFromStorage('mediumShipPosition')
       removePropertyFromStorage('largeShipPosition')
+      removePropertyFromStorage('smallShipPosition')
       setPositionsForGame(cell)
+      fieldTitle.textContent = 'Battle field SECOND PLAYER'
       cell.forEach((el) => {
         el.className = 'cell'
+      })
+      ship.forEach((el) => {
+        el.classList.remove('choosen-ship')
       })
     }
     toggleSetBtm(setShip)
     shipWrapper.addEventListener('click', chooseShip)
     setShip.addEventListener('click', onSetShipBtn)
+    settingField.addEventListener('click', onSettingField)
   },
 }

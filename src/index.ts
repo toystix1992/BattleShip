@@ -1,12 +1,13 @@
 import './main.css'
 import { home } from './view/home/home'
 import { setting } from './view/setting/setting'
+import { game } from './view/game/game'
 
 // List of supported routes. Any url other than these routes will throw a 404 error
 const routes = {
   '/': home,
   '/setting': setting,
-  // '/game': game,
+  '/game': game,
 }
 
 // The router code. Takes a URL, checks against the list of supported routes and then renders the corresponding content page.
